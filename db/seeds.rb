@@ -1,9 +1,18 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+# Categoriesテーブルの初期データ
+Category.create([{name: "キッチン"}, {name: "リビング/子ども"}, {name: "お風呂/トイレ"}])
+
+# Shopsテーブルの初期データ
+Shop.create([{name: "スーパー"}, {name: "ドラッグストア"}, {name: "オンラインショップ"}])
+
+# Itemsテーブルの初期データ
+require "csv"
+
+CSV.foreach('db/items.csv', headers: true) do |row|
+  Item.create(
+    item_name: row['item_name'],
+    checked:   row['checked'],
+    user_id: row['user_id'],
+    category_id: row['category_id'],
+    shop_id: row['shop_id']
+  )
+end

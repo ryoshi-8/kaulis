@@ -31,7 +31,7 @@
 | Column      | Type       | Options                        |
 | ----------- | ---------- | ------------------------------ |
 | item_name   | string     | null: false                    |
-| on_the_list | boolean    | null: false                    |
+| checked     | boolean    | null: false                    |
 | user        | references | null: false, foreign_key: true |
 | category    | references | null: false, foreign_key: true |
 | shop        | references | null: false, foreign_key: true |
