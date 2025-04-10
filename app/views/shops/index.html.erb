@@ -1,0 +1,13 @@
+<h1>お店ごとの買い物リスト</h1>
+
+<% @shops.each do |shop| %>
+  <h2><%= shop.name %></h2>
+  <ul>
+    <% shop.items.each do |item| %>
+      <li>
+        <%= check_box_tag "item_#{item.id}", item.id, item.checked %>
+        <%= item.item_name %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
