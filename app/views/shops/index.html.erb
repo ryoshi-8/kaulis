@@ -5,8 +5,10 @@
   <ul>
     <% shop.items.each do |item| %>
       <li>
-        <%= check_box_tag "item_#{item.id}", item.id, item.checked %>
-        <%= item.item_name %>
+      <%= form_with model: item, url: item_path(item.id), method: :patch, local: true do |form| %>
+        <%= form.check_box :checked, { onchange: "this.form.submit();" }, "true", "false" %>
+        <%= form.label :item_name, item.item_name %>
+      <% end %>
       </li>
     <% end %>
   </ul>
