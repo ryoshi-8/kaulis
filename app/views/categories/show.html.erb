@@ -14,7 +14,7 @@
         <li class="list">
         <%= form_with model: item, url: item_path(item.id), method: :patch, local: true do |form| %>
           <%= form.check_box :checked, { onchange: "this.form.submit();" }, "true", "false" %>
-          <%= form.label :item_name, item.item_name %>
+          <%= form.label :checked, item.item_name %>
         <% end %>
         </li>
       <% end %>
