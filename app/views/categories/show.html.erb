@@ -10,11 +10,14 @@
   <div class='categories-contents'>
     <h2 class='title'><%= @category.name %></h2>
     <ul class='category-lists'>
-      <% @category.items.each do |item| %>
+      <% @items.each do |item| %>
         <li class="list">
         <%= form_with model: item, url: item_path(item.id), method: :patch, local: true do |form| %>
+          <%= form.hidden_field :source, value: "category" %>
           <%= form.check_box :checked, { onchange: "this.form.submit();" }, "true", "false" %>
-          <%= form.label :checked, item.item_name %>
+          <%= form.label :checked, class: ("checked-label" if item.checked) do %>
+            <%= item.item_name %>
+          <% end %>
         <% end %>
         </li>
       <% end %>

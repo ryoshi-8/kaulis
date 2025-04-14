@@ -1,8 +1,12 @@
 class ShopsController < ApplicationController
   def index
     @shops = Shop.includes(:items)
-
   end
+
+  # def show
+  #   @shop = Shop.find(params[:id])
+  #   # チェックOFFのアイテムだけ取得
+  #   @items = @shop.items.where(checked: false)
 
   # def update
   #   @items.each do |item|
