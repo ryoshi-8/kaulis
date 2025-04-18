@@ -1,0 +1,143 @@
+/* body */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  padding-top: 50px; 
+  padding-bottom: 50px; 
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.header__container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #cd853f;
+  border: 2px solid #FFFFFF;
+  text-align: center;
+  position: fixed;
+  top: 0;
+}
+
+.header__title {
+  border: 1px solid #000000;
+  margin-left: 30px;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 50px;
+}
+
+.user__info {
+
+}
+
+.user__info-btn {
+  border: 1px solid #000000;
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 50px;
+}
+
+/* メインエリア */
+.main {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  max-height: 100%;
+}
+
+.main__container {
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid #000000;
+  background-color: #FFEFD5;
+  color: #000
+}
+
+/* categoriesリスト(ホーム、index） */
+.categories-btns {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.category-btn {
+  width: 300px;
+  height: 70px;
+  margin-bottom: 50px;
+  background-color: #FFFFF0;
+  font-size: 32px;
+  color: #000000;
+  font-weight: 600;
+  border: 1px solid #000000;
+  text-align: center;
+  line-height: 70px;
+}
+
+/* categoryごとの買い物リスト（show） */
+
+/* shop別買い物リスト */
+.checked-label {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.6;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #cd853f;
+  font-size: 24px;
+  border: 2px solid #FFFFFF;
+  text-align: center;
+  position: fixed; /* フッターを固定する */
+  bottom: 0; /* 上部から配置の基準位置を決める */
+}
+
+.footer__left {
+  width: 50vh;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+  text-align: center;
+  line-height: 50px;
+}
+
+.footer__right {
+  width: 50vh;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* リンク */
+a {
+  text-decoration: none;
+}
+
+header a {
+  color: #FFFFFF;
+}
+
+footer a {
+  color: #FFFFFF;
+}
+
+.main a {
+  color: #000000;
+}
+
