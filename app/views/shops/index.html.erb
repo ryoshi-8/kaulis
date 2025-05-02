@@ -3,20 +3,18 @@
 <% @shops.each do |shop| %>
   <h2><%= shop.name %></h2>
 
-  <ul>
-  <% shop.items.each do |item| %>
-    <% unless item.checked %>
-      <li>
-      <%= form_with model: item, method: :patch, local: true do |form| %>
-      <%# <%= form_with model: item, url: item_path(item.id), method: :patch, local: true do |form| %>
-        <%= form.hidden_field :source, value: "shop" %>
-        <%= form.check_box :checked, { onchange: "this.form.submit();" }, "true", "false" %>
-        <%= form.label :checked, item.item_name %>
-      <% end %>
-      </li>
+  <div id="items-list">
+    <% shop.items.where(checked: false).each do |item| %>
+      <div class="item-row <%= 'checked-item' if item.checked %>" data-checked="<%= item.checked %>" data-id="<%= item.id %>">
+        <%= form_with(model: item, local: false, html: { class: "item-form" }) do |form| %>
+          <%= form.check_box :checked, { checked: item.checked } %>
+          <%= item.item_name %>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
-  </ul>
+  </div>
 
 <% end %>
 </div>
+
+<script src="/app/javascript/shops_index.js"></script>

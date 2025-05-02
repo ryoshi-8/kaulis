@@ -1,24 +1,3 @@
-
-<div class="main">
-  <div class='categories-contents'>
-    <h2 class='title'><%= @category.name %></h2>
-  </div>
-
-  <div id="items-list">
-    <% @items.each do |item| %>
-      <div class="item-row <%= 'checked-item' if item.checked %>" data-checked="<%= item.checked %>" data-id="<%= item.id %>">
-        <%= form_with(model: item, local: false, html: { class: "item-form" }) do |form| %>
-          <%= form.check_box :checked, { checked: item.checked } %>
-          <%= item.item_name %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
-
-<script src="/app/javascript/category_show.js"></script>
-
-<%# <script>
 document.addEventListener('turbo:load', () => {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
@@ -80,4 +59,3 @@ function resortItems() {
   list.innerHTML = '';
   items.forEach(item => list.appendChild(item));
 }
-</script> %>
