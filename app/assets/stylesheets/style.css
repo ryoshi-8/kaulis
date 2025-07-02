@@ -2,13 +2,20 @@
 body {
   background-color: #ffffff;
   color: #000000;
-  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* min-height: 100vh;
   padding-top: 50px; 
-  padding-bottom: 50px; 
+  padding-bottom: 50px;  */
 }
 
 /* header */
 header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 10;
   display: flex;
   justify-content: center;
 }
@@ -21,8 +28,15 @@ header {
   background-color: #cd853f;
   border: 2px solid #FFFFFF;
   text-align: center;
+  /* width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #cd853f;
+  border: 2px solid #FFFFFF;
+  text-align: center;
   position: fixed;
-  top: 0;
+  top: 0; */
 }
 
 .header__title {
@@ -47,13 +61,20 @@ header {
 
 /* メインエリア */
 .main {
+  top: 50px;
+  bottom: 50px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  /* position: absolute;
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  max-height: 100%;
+  max-height: 100%; */
 }
 
 .main__container {
+  position: relative;
   width: 100%;
   max-width: 800px;
   border: 2px solid #000000;
